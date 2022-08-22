@@ -4,7 +4,7 @@
     <nav class="">
         <div class="mx-auto px-2 sm:px-6 lg:px-20">
             <div class="relative flex items-center justify-between h-16 gap-10">
-                <h4 class="font-medium text-gray-700">Dash Board</h4>
+                <h4 class="font-medium text-gray-700">Dashboard</h4>
                 <div class="">
                     <div class="container">
                         <x-button label="Default" @click="$openModal('editOrganization')"></x-button>
@@ -22,7 +22,7 @@
     <div class="mx-auto px-20 py-10">
         <div class="mx-auto grid overflow-hidden grid-cols-4 grid-rows-1 gap-10 lg:w-10/12 sm:w-auto">
             <div class="row-end-auto col-start-1 grid grid-cols-1 gap-5">
-                <div class="border border-gray-200 p-4 rounded-md">
+                <div class="border border-gray-200 p-4 rounded-md h-fit">
                     <x-button label="Hello" />
                 </div>
             </div>
