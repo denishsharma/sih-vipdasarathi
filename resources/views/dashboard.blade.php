@@ -45,7 +45,8 @@
                                 <x-button xs primary label="Add New Case" @click="$openModal('createCase')" />
                                 <x-button xs label="Generate Report" />
                                 <x-button xs label="Change Status" />
-                                <x-button xs label="Tickets" @click="$openModal('createCase')" />
+                                <x-button xs label="Tickets" @click="$openModal('createTicket')" />
+                                <x-button xs label="Volunteer" @click="$openModal('createVolunteerDetails')" />
                             </div>
                         </caption>
                         <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
@@ -135,4 +136,6 @@
     <livewire:edit-task-details-modal />
     <livewire:create-demand-of-resources-modal />
     <livewire:create-case-modal />
+    <livewire:create-ticket-modal />
+    <livewire:create-volunteer-modal />
 @endsection
