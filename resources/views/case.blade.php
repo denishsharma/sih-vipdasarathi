@@ -1,4 +1,4 @@
-@extends('layouts.general', ['activeButton' => 'home'])
+@extends('layouts.general')
 
 @section('navbar-attached')
     <nav class="">
@@ -24,7 +24,33 @@
         <div class="mx-auto grid overflow-hidden grid-cols-4 grid-rows-1 gap-10 lg:w-10/12 sm:w-auto">
             <div class="row-end-auto col-start-1 grid grid-cols-1 gap-5">
                 <div class="border border-gray-200 p-4 rounded-md h-fit">
-                    <x-button label="Hello" />
+                    {{-- <x-button label="Hello" /> --}}
+                    <div class="flex items-start w-64">
+      
+                        <aside class="w-64 h-full" aria-label="Sidebar">
+                            <div class="overflow-y-auto h-full py-4 px-3 rounded">
+                               <ul class="space-y-2 ">
+                                  <li>
+                                        <x-button class="border-none p-2 text-base font-normal text-gray-800 rounded-lg dark:hover:bg-gray-300" label="All Cases" />
+                                     
+                                  </li>
+                                  <li>
+                                    <x-button class="border-none p-2 text-base font-normal text-gray-800 rounded-lg dark:hover:bg-gray-300" label="Active Cases" />
+                                  </li>
+                                  <li>
+                                    
+                                    <x-button class="border-none p-2 text-base font-normal text-gray-800 rounded-lg dark:hover:bg-gray-300" label="Pending Cases" />
+                                    
+                                  </li>
+                                  <li>
+                                    <x-button class="border-none p-2 text-base font-normal text-gray-800 rounded-lg dark:hover:bg-gray-300 dark:hover:pl-40" label="Closed Cases" />
+                                  </li>
+                                  
+                               </ul>
+                               
+                            </div>
+                         </aside>
+                    </div>
                 </div>
             </div>
             <div class="row-end-auto col-start-2 col-span-3 bg-gray-50">
@@ -42,11 +68,9 @@
                                                                                                  more.</p>
 
                             <div class="pt-3 pb-2 flex flex-row gap-2">
-                                <x-button xs primary label="Add New Case" @click="$openModal('createCase')" />
-                                <x-button xs label="Generate Report" />
-                                <x-button xs label="Change Status" />
-                                <x-button xs label="Tickets" @click="$openModal('createTicket')" />
-                                <x-button xs label="Volunteer" @click="$openModal('createVolunteerDetails')" />
+                                <x-button xs primary label="View Case" />
+                                <x-button xs label="Edit Case" />
+                                <x-button xs label="Delete Case" />
                             </div>
                         </caption>
                         <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
@@ -135,7 +159,4 @@
     <livewire:edit-user-details-modal />
     <livewire:edit-task-details-modal />
     <livewire:create-demand-of-resources-modal />
-    <livewire:create-case-modal />
-    <livewire:create-ticket-modal />
-    <livewire:create-volunteer-modal />
 @endsection
