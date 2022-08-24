@@ -24,3 +24,9 @@ Route::get('/login', function () {
 Route::get('/home', function () {
     return view('dashboard');
 });
+
+Route::group(['prefix' => 'setting'], function () {
+    Route::get('/organization', function () {
+        return view('pages.settings.organizations');
+    })->name('setting.organization');
+});

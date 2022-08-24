@@ -10,6 +10,7 @@
                         <x-button label="Default" @click="$openModal('editOrganization')"></x-button>
                         <x-button label="Edit User" @click="$openModal('editUserDetails')"></x-button>
                         <x-button label="Edit Task" @click="$openModal('editTaskDetails')"></x-button>
+                        <x-button label="Create Resource Demand" @click="$openModal('createDemandOfResources')"></x-button>
                     </div>
                 </div>
             </div>
@@ -130,4 +131,5 @@
     <livewire:test-edit-organization-modal />
     <livewire:edit-user-details-modal />
     <livewire:edit-task-details-modal />
+    <livewire:create-demand-of-resources-modal />
 @endsection
