@@ -41,7 +41,13 @@ Route::group(['prefix' => 'setting'], function () {
     Route::get('/sop', function () {
         return view('pages.settings.sops');
     })->name('setting.sop');
+
+    Route::get('/TaskTypes', function () {
+        return view('pages.settings.task-types');
+    })->name('setting.task-types');
+
 });
+
 
 Route::group(['prefix' => 'case'], function () {
     Route::get('/all', function () {
