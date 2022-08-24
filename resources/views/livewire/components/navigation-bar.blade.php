@@ -11,7 +11,7 @@
                         <a href="{{ route('home') }}"
                             class="{{ $activeButton == 'home' ? 'active-navbar-button' : 'is-navbar-button' }}"
                             aria-current="page">Home</a>
-                        <a href="{{ route('case.general') }}"
+                        <a href="{{ route('case.all') }}"
                             class="{{ $activeButton == 'case' ? 'active-navbar-button' : 'is-navbar-button' }}">Cases</a>
                         <a href="#"
                             class="{{ $activeButton == 'relief' ? 'active-navbar-button' : 'is-navbar-button' }}">Relief

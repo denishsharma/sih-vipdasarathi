@@ -44,9 +44,21 @@ Route::group(['prefix' => 'setting'], function () {
 });
 
 Route::group(['prefix' => 'case'], function () {
-    Route::get('/general', function () {
-        return view('pages.cases.general');
-    })->name('case.general');
+    Route::get('/all', function () {
+        return view('pages.cases.general', ['activeSection' => 'all', 'test' => 'all cases']);
+    })->name('case.all');
+
+    Route::get('/active', function () {
+        return view('pages.cases.general', ['activeSection' => 'active', 'test' => 'active cases']);
+    })->name('case.active');
+
+    Route::get('/pending', function () {
+        return view('pages.cases.general', ['activeSection' => 'pending', 'test' => 'pending cases']);
+    })->name('case.pending');
+
+    Route::get('/closed', function () {
+        return view('pages.cases.general', ['activeSection' => 'closed', 'test' => 'closed cases']);
+    })->name('case.closed');
 });
 
 

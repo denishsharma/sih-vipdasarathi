@@ -4,14 +4,11 @@
     <nav class="">
         <div class="mx-auto px-2 sm:px-6 lg:px-20">
             <div class="relative flex items-center justify-between h-16 gap-10">
-                <h4 class="font-medium text-lg text-gray-700">Settings</h4>
                 <div class="">
-                    <div class="container">
-                        <x-button label="Default" @click="$openModal('editOrganization')"></x-button>
-                        <x-button label="Edit User" @click="$openModal('editUserDetails')"></x-button>
-                        <x-button label="Edit Task" @click="$openModal('editTaskDetails')"></x-button>
-                        <x-button label="Create Resource Demand" @click="$openModal('createDemandOfResources')"></x-button>
-                    </div>
+                    @yield('breadcrumb-title')
+                </div>
+                <div class="">
+                    @yield('navbar-attached-actions')
                 </div>
             </div>
         </div>
