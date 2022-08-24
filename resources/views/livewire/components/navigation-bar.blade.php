@@ -8,13 +8,22 @@
                 <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-2">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <a href="#" class="bg-primary-700 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
-                        <a href="#" class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md text-sm">Cases</a>
-                        <a href="#" class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md text-sm">Resource Centres</a>
-                        <a href="#" class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md text-sm">Teams</a>
-                        <a href="#" class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md text-sm">Volunteers</a>
-                        <a href="#" class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md text-sm">Tickets</a>
-                        <a href="#" class="text-gray-700 hover:bg-gray-200 px-3 py-2 rounded-md text-sm">Settings</a>
+                        <a href="{{ route('home') }}"
+                            class="{{ $activeButton == 'home' ? 'active-navbar-button' : 'is-navbar-button' }}"
+                            aria-current="page">Home</a>
+                        <a href="{{ route('case.general') }}"
+                            class="{{ $activeButton == 'case' ? 'active-navbar-button' : 'is-navbar-button' }}">Cases</a>
+                        <a href="#"
+                            class="{{ $activeButton == 'relief' ? 'active-navbar-button' : 'is-navbar-button' }}">Relief
+                            Centres</a>
+                        <a href="#"
+                            class="{{ $activeButton == 'team' ? 'active-navbar-button' : 'is-navbar-button' }}">Teams</a>
+                        <a href="{{ route('volunteer.profiles') }}"
+                            class="{{ $activeButton == 'volunteer' ? 'active-navbar-button' : 'is-navbar-button' }}">Volunteers</a>
+                        <a href="#"
+                            class="{{ $activeButton == 'ticket' ? 'active-navbar-button' : 'is-navbar-button' }}">Tickets</a>
+                        <a href="{{ route('setting.general') }}"
+                            class="{{ $activeButton == 'setting' ? 'active-navbar-button' : 'is-navbar-button' }}">Settings</a>
                     </div>
                 </div>
             </div>
@@ -30,12 +39,15 @@
                     <div>
                         <x-dropdown>
                             <x-slot name="trigger">
-                                <div class="flex items-center py-2 px-2 hover:border-gray-200 border-transparent transition-colors border rounded-lg hover:bg-white text-gray-900 whitespace-nowrap dark:text-white">
+                                <div
+                                    class="flex items-center py-2 px-2 hover:border-gray-200 border-transparent transition-colors border rounded-lg hover:bg-white text-gray-900 whitespace-nowrap dark:text-white">
                                     <div class="pr-3">
                                         <div class="text-xs text-right font-semibold">Neil Sims</div>
-                                        <div class="font-normal text-right text-xs text-gray-500">neil.sims@flowbite.com</div>
+                                        <div class="font-normal text-right text-xs text-gray-500">neil.sims@flowbite.com
+                                        </div>
                                     </div>
-                                    <img class="w-8 h-8 rounded-full border border-gray-200" src="{{ asset('images/only-vipdasarathi-logo.png') }}" alt="Jese image">
+                                    <img class="w-8 h-8 rounded-full border border-gray-200"
+                                        src="{{ asset('images/only-vipdasarathi-logo.png') }}" alt="Jese image">
                                 </div>
                             </x-slot>
 
@@ -58,13 +70,17 @@
     <div class="sm:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a>
+            <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                aria-current="page">Dashboard</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+            <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+            <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
 
-            <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+            <a href="#"
+                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
         </div>
     </div>
 </nav>

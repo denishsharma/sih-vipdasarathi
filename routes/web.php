@@ -23,10 +23,43 @@ Route::get('/login', function () {
 
 Route::get('/home', function () {
     return view('dashboard');
-});
+})->name('home');
 
 Route::group(['prefix' => 'setting'], function () {
+    Route::get('/general', function () {
+        return view('pages.settings.general');
+    })->name('setting.general');
+
     Route::get('/organization', function () {
         return view('pages.settings.organizations');
     })->name('setting.organization');
+
+    Route::get('/user', function () {
+        return view('pages.settings.users');
+    })->name('setting.user');
+
+    Route::get('/sop', function () {
+        return view('pages.settings.sops');
+    })->name('setting.sop');
+});
+
+Route::group(['prefix' => 'case'], function () {
+    Route::get('/general', function () {
+        return view('pages.cases.general');
+    })->name('case.general');
+});
+
+
+Route::group(['prefix' => 'volunteer'], function () {
+    Route::get('/profiles', function () {
+        return view('pages.volunteer.profiles');
+    })->name('volunteer.profiles');
+
+    Route::get('/tokens', function () {
+        return view('pages.volunteer.tokens');
+    })->name('volunteer.tokens');
+
+    Route::get('/audits', function () {
+        return view('pages.volunteer.audits');
+    })->name('volunteer.audits');
 });
