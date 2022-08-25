@@ -34,6 +34,20 @@ Route::group(['prefix' => 'setting'], function () {
         return view('pages.settings.organizations');
     })->name('setting.organization');
 
+    Route::group(['prefix' => 'organization/view'], function () {
+        Route::get('/general', function () {
+            return view('pages.settings.organizations.views.general');
+        })->name('setting.organization.views.general');
+
+        Route::get('/permission', function () {
+            return view('pages.settings.organizations.views.permissions');
+        })->name('setting.organization.views.permission');
+
+        Route::get('/user', function () {
+            return view('pages.settings.organizations.views.users');
+        })->name('setting.organization.views.user');
+    });
+
     Route::get('/user', function () {
         return view('pages.settings.users');
     })->name('setting.user');
@@ -45,7 +59,6 @@ Route::group(['prefix' => 'setting'], function () {
     Route::get('/TaskTypes', function () {
         return view('pages.settings.task-types');
     })->name('setting.task-types');
-
 });
 
 
