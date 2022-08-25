@@ -41,44 +41,58 @@
         <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
             <tr>
                 <th scope="col" class="py-3 px-6">
-                    Case Name
+                    Resource Type
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Color
+                    Request Subject
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Category
+                    Comment
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Price
+                    Item
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    <span class="sr-only">Edit</span>
+                    Status
                 </th>
+                <th scope="col" class="py-3 px-6">
+                    DateTime
+                </th>
+
             </tr>
         </thead>
         <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                {{-- <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
                         <h4 class="text-sm font-medium text-gray-700">Gujrat</h4>
                         <span class="text-xs font-regular text-gray-500">add xxx resources</span>
                     </div>
+                </td> --}}
+                <td class="py-4 px-6">
+                    Food
                 </td>
                 <td class="py-4 px-6">
-                    Sliver
+                    Need more food
+                </td>
+                <td class="py-4 px-6">
+                    Lorem ipsum dolor sit amet
+                </td>
+                <td class="py-4 px-6">
+                    Apples
                 </td>
                 <td class="py-4 px-6">
                     <span
-                        class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">Default</span>
+                        class="bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-orange-200 dark:text-orange-800">On
+                        the way</span>
                 </td>
                 <td class="py-4 px-6">
-                    $2999
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">23 October</span>
+                        <span class="text-xs font-regular text-gray-500">23:50</span>
+                    </div>
                 </td>
-                <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                </td>
+
             </tr>
         </tbody>
     </table>

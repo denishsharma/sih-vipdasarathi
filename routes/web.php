@@ -30,73 +30,66 @@ Route::group(['prefix' => 'setting'], function () {
         return view('pages.settings.general');
     })->name('setting.general');
 
-    Route::group(['prefix' =>'/organization'], function(){
+    Route::group(['prefix' => '/organization'], function () {
         Route::get('/', function () {
             return view('pages.settings.organizations');
         })->name('setting.organization');
 
-        Route::get('/{signature}/overview', function ($signature){
+        Route::get('/{signature}/overview', function ($signature) {
             return view('pages.settings.organizations.views.overview', ['caseTitle' => 'Test Setting']);
         })->name('setting.organization.view.overview');
 
-        Route::get('/{signature}/permission', function ($signature){
+        Route::get('/{signature}/permission', function ($signature) {
             return view('pages.settings.organizations.views.permissions', ['caseTitle' => 'Test Setting']);
         })->name('setting.organization.view.permission');
 
-        Route::get('/{signature}/users', function ($signature){
+        Route::get('/{signature}/users', function ($signature) {
             return view('pages.settings.organizations.views.users', ['caseTitle' => 'Test Setting']);
         })->name('setting.organization.view.users');
-
     });
 
 
-Route::group(['prefix' => '/user'], function(){
+    Route::group(['prefix' => '/user'], function () {
 
-    Route::get('/', function () {
-        return view('pages.settings.users');
-    })->name('setting.user');
+        Route::get('/', function () {
+            return view('pages.settings.users');
+        })->name('setting.user');
 
-    Route::get('/{signature}/overview', function ($signature){
-        return view('pages.settings.users.views.overview', ['caseTitle' => 'Test Setting']);
-    })->name('setting.user.view.overview');
+        Route::get('/{signature}/overview', function ($signature) {
+            return view('pages.settings.users.views.overview', ['caseTitle' => 'Test Setting']);
+        })->name('setting.user.view.overview');
 
-    Route::get('/{signature}/permission', function ($signature){
-        return view('pages.settings.users.views.permission', ['caseTitle' => 'Test Setting']);
-    })->name('setting.user.view.permission');
+        Route::get('/{signature}/permission', function ($signature) {
+            return view('pages.settings.users.views.permission', ['caseTitle' => 'Test Setting']);
+        })->name('setting.user.view.permission');
 
-    Route::get('/{signature}/organization', function ($signature){
-        return view('pages.settings.users.views.organization', ['caseTitle' => 'Test Setting']);
-    })->name('setting.user.view.organization');
-});
-
-
-
-
-Route::group(['prefix' => 'sop'], function(){
-
-    Route::get('/', function () {
-        return view('pages.settings.sops');
-    })->name('setting.sop');
-
-    Route::get('/{signature}/overview', function ($signature){
-        return view('pages.settings.sop.view.overview', ['caseTitle' => 'Test Setting']);
-    })->name('setting.sop.view.overview');
-
-    Route::get('/{signature}/DisasterType', function ($signature){
-        return view('pages.settings.sop.view.DisasterType', ['caseTitle' => 'Test Setting']);
-    })->name('setting.sop.view.DisasterType');
+        Route::get('/{signature}/organization', function ($signature) {
+            return view('pages.settings.users.views.organization', ['caseTitle' => 'Test Setting']);
+        })->name('setting.user.view.organization');
+    });
 
 
 
-});
+
+    Route::group(['prefix' => 'sop'], function () {
+
+        Route::get('/', function () {
+            return view('pages.settings.sops');
+        })->name('setting.sop');
+
+        Route::get('/{signature}/overview', function ($signature) {
+            return view('pages.settings.sop.view.overview', ['caseTitle' => 'Test Setting']);
+        })->name('setting.sop.view.overview');
+
+        Route::get('/{signature}/DisasterType', function ($signature) {
+            return view('pages.settings.sop.view.DisasterType', ['caseTitle' => 'Test Setting']);
+        })->name('setting.sop.view.DisasterType');
+    });
 
 
     Route::get('/TaskTypes', function () {
         return view('pages.settings.task-types');
     })->name('setting.task-types');
-
-
-
 });
 
 
@@ -117,29 +110,41 @@ Route::group(['prefix' => 'case'], function () {
         return view('pages.cases.general', ['activeSection' => 'closed', 'test' => 'closed cases']);
     })->name('case.closed');
 
-    Route::get('/{signature}/overview', function ($signature){
+    Route::get('/{signature}/overview', function ($signature) {
         return view('pages.cases.view.overview', ['caseTitle' => 'Test Case']);
     })->name('case.view.overview');
 
-    Route::get('/{signature}/teams', function ($signature){
+    Route::get('/{signature}/teams', function ($signature) {
         return view('pages.cases.view.teams', ['caseTitle' => 'Test Case']);
     })->name('case.view.teams');
 
-    Route::get('/{signature}/tasks', function ($signature){
+    Route::get('/{signature}/tasks', function ($signature) {
         return view('pages.cases.view.tasks', ['caseTitle' => 'Test Case']);
     })->name('case.view.tasks');
 
-    Route::get('/{signature}/decisions', function ($signature){
+    Route::get('/{signature}/demands', function ($signature) {
+        return view('pages.cases.view.demands', ['caseTitle' => 'Test Case']);
+    })->name('case.view.demand');
+
+    Route::get('/{signature}/decisions', function ($signature) {
         return view('pages.cases.view.decisions', ['caseTitle' => 'Test Case']);
     })->name('case.view.decisions');
 
-    Route::get('/{signature}/reports', function ($signature){
+    Route::get('/{signature}/reports', function ($signature) {
         return view('pages.cases.view.reports', ['caseTitle' => 'Test Case']);
     })->name('case.view.reports');
 
-    Route::get('/{signature}/shelters', function ($signature){
+    Route::get('/{signature}/volunteers', function ($signature) {
+        return view('pages.cases.view.volunteers', ['caseTitle' => 'Test Case']);
+    })->name('case.view.volunteer');
+
+    Route::get('/{signature}/shelters', function ($signature) {
         return view('pages.cases.view.shelters', ['caseTitle' => 'Test Case']);
     })->name('case.view.shelters');
+
+    Route::get('/{signature}/tickets', function ($signature) {
+        return view('pages.cases.view.tickets', ['caseTitle' => 'Test Case']);
+    })->name('case.view.ticket');
 });
 
 Route::group(['prefix' => 'team'], function () {
@@ -158,7 +163,6 @@ Route::group(['prefix' => 'team'], function () {
     Route::get('/{signature}/overview', function ($signature) {
         return view('pages.teams.view.overview', ['caseTitle' => 'Test Teams']);
     })->name('team.view.overview');
-
 });
 
 Route::group(['prefix' => 'ticket'], function () {
