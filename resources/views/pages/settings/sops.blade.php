@@ -79,7 +79,7 @@
                     </td>
                     <td class="py-4 px-6">
                         Earthquake
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">(View)</a>
+                        <a href="{{ route('setting.sop.view.DisasterType', ['signature' => '123']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">(View)</a>
                     </td>
                     <td class="py-4 px-6">
                         PDF
@@ -88,7 +88,7 @@
                         12 June, 2015
                     </td>
                     <td class="py-4 px-6 text-right flex items-center justify-start gap-3">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                        <a href="{{ route('setting.sop.view.overview', ['signature' => '123']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                     </td>
                 </tr>
                 </tbody>

@@ -75,17 +75,17 @@
                     </td>
                     <td class="py-4 px-6">
                         26
-                        <a href="{{ route('setting.organization.views.permission') }}"
+                        <a href="{{ route('setting.organization.view.permission', ['signature' => '999']) }}"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">(View)</a>
                     </td>
                     <td class="py-4 px-6">
                         22
-                        <a href="{{ route('setting.organization.views.user') }}"
+                        <a href="{{ route('setting.organization.view.users', ['signature' => '999']) }}"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">(View)</a>
                     </td>
                     <td class="py-4 px-6 text-right flex items-center justify-start gap-3">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        <a href="{{ route('setting.organization.views.general') }}"
+                        <a href="{{ route('setting.organization.view.overview', ['signature' => '123']) }}"
                             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                     </td>

@@ -85,21 +85,21 @@
                 <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
                         <h4 class="text-sm font-medium text-gray-700">26</h4>
-                        <span class="text-xs font-regular text-gray-500"><a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a></span>
+                        <span class="text-xs font-regular text-gray-500"><a href="{{ route('setting.user.view.permission', ['signature' => '999']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a></span>
                     </div>
                 </td>
 
                 <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
                         <h4 class="text-sm font-medium text-gray-700">NDRF</h4>
-                        <span class="text-xs font-regular text-gray-500"><a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a></span>
+                        <span class="text-xs font-regular text-gray-500"><a href="{{ route('setting.user.view.organization', ['signature' => '999']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a></span>
                     </div>
                 </td>
 
 
                 <td class="py-4 px-6 text-right flex items-center justify-start gap-3">
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    <a href="{{ route('setting.user.view.overview', ['signature' => '999']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                 </td>
             </tr>

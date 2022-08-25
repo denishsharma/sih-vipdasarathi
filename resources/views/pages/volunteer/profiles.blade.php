@@ -83,7 +83,7 @@
 
                     <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                        <a href="{{ route('volunteer.view.overview', ['signature' => '666']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                     </td>
                 </tr>
@@ -135,7 +135,7 @@
 
                     <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                        <a href="{{ route('volunteer.view.overview', ['signature' => '666']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                     </td>
                 </tr>
