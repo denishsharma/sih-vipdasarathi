@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/index', [NodeController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
@@ -127,3 +129,5 @@ Route::group(['prefix' => 'volunteer'], function () {
         return view('pages.volunteer.audits');
     })->name('volunteer.audits');
 });
+
+
