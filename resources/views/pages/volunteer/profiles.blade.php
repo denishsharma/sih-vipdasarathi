@@ -38,16 +38,22 @@
             <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
                 <tr>
                     <th scope="col" class="py-3 px-6">
-                        Case Name
+                        First Name
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Color
+                        Last Name
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Category
+                        Phone Number
                     </th>
                     <th scope="col" class="py-3 px-6">
-                        Price
+                        Email
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Adhaar Number
+                    </th>
+                    <th scope="col" class="py-3 px-6">
+                        Joining Time
                     </th>
                     <th scope="col" class="py-3 px-6">
                         <span class="sr-only">Edit</span>
@@ -57,24 +63,80 @@
             <tbody>
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
-                        <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
-                            <h4 class="text-sm font-medium text-gray-700">Gurujat</h4>
-                            <span class="text-xs font-regular text-gray-500">weqweqeqweqe</span>
-                        </div>
+                        <h4 class="text-sm font-medium text-gray-700">Faraz</h4>
+                    </td>
+                    <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                        <h4 class="text-sm font-medium text-gray-700">Hussain</h4>
                     </td>
                     <td class="py-4 px-6">
-                        Sliver
+                        +91 9082905165
                     </td>
                     <td class="py-4 px-6">
-                        <span
-                            class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">Default</span>
+                        farazhussain@gmail.com
                     </td>
                     <td class="py-4 px-6">
-                        $2999
+                        5118 4690 1350
                     </td>
+                    <td class="py-4 px-6">
+                        5 June 2021
+                    </td>
+
                     <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                         <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                    </td>
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                        <h4 class="text-sm font-medium text-gray-700">Faraz</h4>
+                    </td>
+                    <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                        <h4 class="text-sm font-medium text-gray-700">Hussain</h4>
+                    </td>
+                    <td class="py-4 px-6">
+                        +91 9082905165
+                    </td>
+                    <td class="py-4 px-6">
+                        farazhussain@gmail.com
+                    </td>
+                    <td class="py-4 px-6">
+                        5118 4690 1350
+                    </td>
+                    <td class="py-4 px-6">
+                        5 June 2021
+                    </td>
+
+                    <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
+                    </td>
+                </tr>
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                    <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                        <h4 class="text-sm font-medium text-gray-700">Faraz</h4>
+                    </td>
+                    <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                        <h4 class="text-sm font-medium text-gray-700">Hussain</h4>
+                    </td>
+                    <td class="py-4 px-6">
+                        +91 9082905165
+                    </td>
+                    <td class="py-4 px-6">
+                        farazhussain@gmail.com
+                    </td>
+                    <td class="py-4 px-6">
+                        5118 4690 1350
+                    </td>
+                    <td class="py-4 px-6">
+                        5 June 2021
+                    </td>
+
+                    <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                     </td>
                 </tr>
             </tbody>

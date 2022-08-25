@@ -13,14 +13,14 @@
                             aria-current="page">Home</a>
                         <a href="{{ route('case.all') }}"
                             class="{{ $activeButton == 'case' ? 'active-navbar-button' : 'is-navbar-button' }}">Cases</a>
-                        <a href="#"
+                        <a href="{{ route('relief.shelter') }}"
                             class="{{ $activeButton == 'relief' ? 'active-navbar-button' : 'is-navbar-button' }}">Relief
                             Centres</a>
-                        <a href="#"
+                        <a href="{{ route('team.all') }}"
                             class="{{ $activeButton == 'team' ? 'active-navbar-button' : 'is-navbar-button' }}">Teams</a>
                         <a href="{{ route('volunteer.profiles') }}"
                             class="{{ $activeButton == 'volunteer' ? 'active-navbar-button' : 'is-navbar-button' }}">Volunteers</a>
-                        <a href="#"
+                        <a href="{{ route('ticket.all') }}"
                             class="{{ $activeButton == 'ticket' ? 'active-navbar-button' : 'is-navbar-button' }}">Tickets</a>
                         <a href="{{ route('setting.general') }}"
                             class="{{ $activeButton == 'setting' ? 'active-navbar-button' : 'is-navbar-button' }}">Settings</a>

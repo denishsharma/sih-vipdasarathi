@@ -61,6 +61,52 @@ Route::group(['prefix' => 'case'], function () {
     })->name('case.closed');
 });
 
+Route::group(['prefix' => 'team'], function () {
+    Route::get('/all', function () {
+        return view('pages.teams.general', ['activeSection' => 'all', 'test' => 'all teams']);
+    })->name('team.all');
+
+    Route::get('/active', function () {
+        return view('pages.teams.general', ['activeSection' => 'active', 'test' => 'active teams']);
+    })->name('team.active');
+
+    Route::get('/inactive', function () {
+        return view('pages.teams.general', ['activeSection' => 'inactive', 'test' => 'inactive teams']);
+    })->name('team.inactive');
+});
+
+Route::group(['prefix' => 'ticket'], function () {
+    Route::get('/all', function () {
+        return view('pages.tickets.general', ['activeSection' => 'all', 'test' => 'all tickets']);
+    })->name('ticket.all');
+
+    Route::get('/active', function () {
+        return view('pages.tickets.general', ['activeSection' => 'active', 'test' => 'active tickets']);
+    })->name('ticket.active');
+
+    Route::get('/pending', function () {
+        return view('pages.tickets.general', ['activeSection' => 'pending', 'test' => 'pending tickets']);
+    })->name('ticket.pending');
+
+    Route::get('/closed', function () {
+        return view('pages.tickets.general', ['activeSection' => 'closed', 'test' => 'closed tickets']);
+    })->name('ticket.closed');
+});
+
+
+Route::group(['prefix' => 'relief'], function () {
+    Route::get('/shelter', function () {
+        return view('pages.reliefs.shelters');
+    })->name('relief.shelter');
+
+    Route::get('/hospital', function () {
+        return view('pages.reliefs.hospitals');
+    })->name('relief.hospital');
+
+    Route::get('/demand-of-resource', function () {
+        return view('pages.reliefs.demand-of-resources');
+    })->name('relief.demand-of-resource');
+});
 
 Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/profiles', function () {
