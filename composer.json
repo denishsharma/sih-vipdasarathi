@@ -7,11 +7,13 @@
     "require": {
         "php": "^8.0.2",
         "guzzlehttp/guzzle": "^7.2",
+        "jaynilsavani/laravel-country-state-city": "dev-master",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
         "spatie/laravel-permission": "^5.5",
+        "wire-elements/modal": "^1.0",
         "wireui/wireui": "^1.14"
     },
     "require-dev": {

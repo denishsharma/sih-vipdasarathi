@@ -9,21 +9,21 @@
                     <div class="flex space-x-2">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <a href="{{ route('home') }}"
-                            class="{{ $activeButton == 'home' ? 'active-navbar-button' : 'is-navbar-button' }}"
-                            aria-current="page">Home</a>
+                           class="{{ $activeButton == 'home' ? 'active-navbar-button' : 'is-navbar-button' }}"
+                           aria-current="page">Home</a>
                         <a href="{{ route('case.all') }}"
-                            class="{{ $activeButton == 'case' ? 'active-navbar-button' : 'is-navbar-button' }}">Cases</a>
+                           class="{{ $activeButton == 'case' ? 'active-navbar-button' : 'is-navbar-button' }}">Cases</a>
                         <a href="{{ route('relief.demand-of-resource') }}"
-                            class="{{ $activeButton == 'relief' ? 'active-navbar-button' : 'is-navbar-button' }}">Relief
-                            Centres</a>
+                           class="{{ $activeButton == 'relief' ? 'active-navbar-button' : 'is-navbar-button' }}">Relief
+                                                                                                                 Centres</a>
                         <a href="{{ route('team.all') }}"
-                            class="{{ $activeButton == 'team' ? 'active-navbar-button' : 'is-navbar-button' }}">Teams</a>
+                           class="{{ $activeButton == 'team' ? 'active-navbar-button' : 'is-navbar-button' }}">Teams</a>
                         <a href="{{ route('volunteer.profiles') }}"
-                            class="{{ $activeButton == 'volunteer' ? 'active-navbar-button' : 'is-navbar-button' }}">Volunteers</a>
+                           class="{{ $activeButton == 'volunteer' ? 'active-navbar-button' : 'is-navbar-button' }}">Volunteers</a>
                         <a href="{{ route('ticket.all') }}"
-                            class="{{ $activeButton == 'ticket' ? 'active-navbar-button' : 'is-navbar-button' }}">Tickets</a>
+                           class="{{ $activeButton == 'ticket' ? 'active-navbar-button' : 'is-navbar-button' }}">Tickets</a>
                         <a href="{{ route('setting.general') }}"
-                            class="{{ $activeButton == 'setting' ? 'active-navbar-button' : 'is-navbar-button' }}">Settings</a>
+                           class="{{ $activeButton == 'setting' ? 'active-navbar-button' : 'is-navbar-button' }}">Settings</a>
                     </div>
                 </div>
             </div>
@@ -42,12 +42,12 @@
                                 <div
                                     class="flex items-center py-2 px-2 hover:border-gray-200 border-transparent transition-colors border rounded-lg hover:bg-white text-gray-900 whitespace-nowrap dark:text-white">
                                     <div class="pr-3">
-                                        <div class="text-xs text-right font-semibold">Neil Sims</div>
-                                        <div class="font-normal text-right text-xs text-gray-500">neil.sims@flowbite.com
-                                        </div>
+                                        <div class="text-xs text-right font-semibold">{{ join(" ", [auth()->user()->first_name, auth()->user()->last_name]) }}</div>
+                                        <div class="font-normal text-right text-xs text-gray-500">
+                                            {{ auth()->user()->email }}</div>
                                     </div>
                                     <img class="w-8 h-8 rounded-full border border-gray-200"
-                                        src="{{ asset('images/only-vipdasarathi-logo.png') }}" alt="Jese image">
+                                         src="https://ui-avatars.com/api/?name={{ join("+", [auth()->user()->first_name, auth()->user()->last_name]) }}" alt="Jese image">
                                 </div>
                             </x-slot>
 
@@ -56,9 +56,7 @@
                                 <x-dropdown.item label="My Profile" />
                             </x-dropdown.header>
 
-                            <x-dropdown.item separator label="Help Center" />
-                            <x-dropdown.item label="Live Chat" />
-                            <x-dropdown.item label="Logout" />
+                            <x-dropdown.item separator wire:click="logoutUser" label="Logout" />
                         </x-dropdown>
                     </div>
                 </div>
@@ -71,16 +69,16 @@
         <div class="px-2 pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-                aria-current="page">Dashboard</a>
+               aria-current="page">Dashboard</a>
 
             <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Team</a>
 
             <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Projects</a>
 
             <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
+               class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Calendar</a>
         </div>
     </div>
 </nav>
