@@ -34,20 +34,6 @@ Route::group(['prefix' => 'setting'], function () {
         return view('pages.settings.organizations');
     })->name('setting.organization');
 
-    Route::group(['prefix' => 'organization/view'], function () {
-        Route::get('/general', function () {
-            return view('pages.settings.organizations.views.general');
-        })->name('setting.organization.views.general');
-
-        Route::get('/permission', function () {
-            return view('pages.settings.organizations.views.permissions');
-        })->name('setting.organization.views.permission');
-
-        Route::get('/user', function () {
-            return view('pages.settings.organizations.views.users');
-        })->name('setting.organization.views.user');
-    });
-
     Route::get('/user', function () {
         return view('pages.settings.users');
     })->name('setting.user');
@@ -125,6 +111,14 @@ Route::group(['prefix' => 'relief'], function () {
     Route::get('/demand-of-resource', function () {
         return view('pages.reliefs.demand-of-resources');
     })->name('relief.demand-of-resource');
+
+    Route::get('/equipments', function () {
+        return view('pages.reliefs.equipments');
+    })->name('relief.equipments');
+
+    Route::get('/foods', function () {
+        return view('pages.reliefs.foods');
+    })->name('relief.foods');
 });
 
 Route::group(['prefix' => 'volunteer'], function () {
