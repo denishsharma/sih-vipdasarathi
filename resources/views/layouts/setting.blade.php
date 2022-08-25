@@ -39,6 +39,11 @@
                                 <x-icon name="collection" class="w-4.5 h-4.5" />
                                 <span>Task Types</span>
                             </a>
+                            <a href="{{ route('setting.disaster-types') }}"
+                               class="{{ $setting == 'disaster-types' ? 'active-setting-button' : 'is-setting-button' }}">
+                                <x-icon name="collection" class="w-4.5 h-4.5" />
+                                <span>Disaster Types</span>
+                            </a>
                         </div>
                     </div>
                 </div>

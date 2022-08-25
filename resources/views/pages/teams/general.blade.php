@@ -128,7 +128,7 @@
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                     <a href="#"
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Members</a>
-                                    <a href="#"
+                                    <a href="{{ route('team.view.overview', ['signature' => '123']) }}"
                                         class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                                 </td>
                             </tr>
