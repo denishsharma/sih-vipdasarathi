@@ -31,16 +31,17 @@
             <div class="row-end-auto col-start-2 col-span-3 bg-gray-50">
                 <div class="overflow-x-auto border border-gray-200 rounded-lg">
                     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                        <caption class="px-5 py-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                        <caption
+                            class="px-5 py-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                             Active Cases
                             <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of
-                                                                                                 Flowbite products
-                                                                                                 designed to help you
-                                                                                                 work and play, stay
-                                                                                                 organized, get answers,
-                                                                                                 keep in touch, grow
-                                                                                                 your business, and
-                                                                                                 more.</p>
+                                Flowbite products
+                                designed to help you
+                                work and play, stay
+                                organized, get answers,
+                                keep in touch, grow
+                                your business, and
+                                more.</p>
 
                             <div class="pt-3 pb-2 flex flex-row gap-2">
                                 <x-button xs primary label="Add New Case" @click="$openModal('createCase')" />

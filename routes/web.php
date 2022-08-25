@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,19 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/index', [NodeController::class, 'index']);
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('pages.auth.login');
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('/login', function () {
+        return view('pages.auth.login');
+    })->middleware('guest')->name('auth.login');
 });
 
 Route::get('/home', function () {
     return view('dashboard');
-})->name('home');
+})->name('home')->middleware('auth');
 
-Route::group(['prefix' => 'setting'], function () {
+Route::group(['prefix' => 'setting', 'middleware' => ['auth']], function () {
     Route::get('/general', function () {
         return view('pages.settings.general');
     })->name('setting.general');
@@ -87,28 +92,24 @@ Route::group(['prefix' => 'setting'], function () {
     });
 
 
-    Route::get('/TaskTypes', function () {
+    Route::get('/task-types', function () {
         return view('pages.settings.task-types');
     })->name('setting.task-types');
+
+    Route::get('/disaster-types', function () {
+        return view('pages.settings.disaster-types');
+    })->name('setting.disaster-types');
 });
 
 
-Route::group(['prefix' => 'case'], function () {
-    Route::get('/all', function () {
-        return view('pages.cases.general', ['activeSection' => 'all', 'test' => 'all cases']);
-    })->name('case.all');
+Route::group(['prefix' => 'case', 'middleware' => ['auth']], function () {
+    Route::get('/all', [\App\Http\Controllers\CaseController::class, 'showAllCasesPage'])->name('case.all');
 
-    Route::get('/active', function () {
-        return view('pages.cases.general', ['activeSection' => 'active', 'test' => 'active cases']);
-    })->name('case.active');
+    Route::get('/active', [\App\Http\Controllers\CaseController::class, 'showActiveCasesPage'])->name('case.active');
 
-    Route::get('/pending', function () {
-        return view('pages.cases.general', ['activeSection' => 'pending', 'test' => 'pending cases']);
-    })->name('case.pending');
+    Route::get('/pending', [\App\Http\Controllers\CaseController::class, 'showPendingCasesPage'])->name('case.pending');
 
-    Route::get('/closed', function () {
-        return view('pages.cases.general', ['activeSection' => 'closed', 'test' => 'closed cases']);
-    })->name('case.closed');
+    Route::get('/closed', [\App\Http\Controllers\CaseController::class, 'showClosedCasesPage'])->name('case.closed');
 
     Route::get('/{signature}/overview', function ($signature) {
         return view('pages.cases.view.overview', ['caseTitle' => 'Test Case']);
@@ -147,7 +148,7 @@ Route::group(['prefix' => 'case'], function () {
     })->name('case.view.ticket');
 });
 
-Route::group(['prefix' => 'team'], function () {
+Route::group(['prefix' => 'team', 'middleware' => ['auth']], function () {
     Route::get('/all', function () {
         return view('pages.teams.general', ['activeSection' => 'all', 'test' => 'all teams']);
     })->name('team.all');
@@ -165,7 +166,7 @@ Route::group(['prefix' => 'team'], function () {
     })->name('team.view.overview');
 });
 
-Route::group(['prefix' => 'ticket'], function () {
+Route::group(['prefix' => 'ticket', 'middleware' => ['auth']], function () {
     Route::get('/all', function () {
         return view('pages.tickets.general', ['activeSection' => 'all', 'test' => 'all tickets']);
     })->name('ticket.all');
@@ -184,7 +185,7 @@ Route::group(['prefix' => 'ticket'], function () {
 });
 
 
-Route::group(['prefix' => 'relief'], function () {
+Route::group(['prefix' => 'relief', 'middleware' => ['auth']], function () {
     Route::get('/shelter', function () {
         return view('pages.reliefs.shelters');
     })->name('relief.shelter');
@@ -206,7 +207,7 @@ Route::group(['prefix' => 'relief'], function () {
     })->name('relief.foods');
 });
 
-Route::group(['prefix' => 'volunteer'], function () {
+Route::group(['prefix' => 'volunteer', 'middleware' => ['auth']], function () {
     Route::get('/profiles', function () {
         return view('pages.volunteer.profiles');
     })->name('volunteer.profiles');

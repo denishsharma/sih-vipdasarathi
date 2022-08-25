@@ -69,8 +69,8 @@
                     </th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <tbody class="divide-y">
+                <tr class="bg-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="py-4 px-6">
                         SOP Earthquake 2015
                     </td>
