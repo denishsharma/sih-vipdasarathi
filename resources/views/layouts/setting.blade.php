@@ -34,7 +34,7 @@
                     <div class="mt-5">
                         <h4 class="ml-3 text-gray-400 uppercase text-xs mb-2 font-medium">Master</h4>
                         <div class="grid grid-cols-1 gap-1">
-                            <a href="#"
+                            <a href="{{ route('setting.task-types') }}"
                                 class="{{ $setting == 'task-types' ? 'active-setting-button' : 'is-setting-button' }}">
                                 <x-icon name="collection" class="w-4.5 h-4.5" />
                                 <span>Task Types</span>
