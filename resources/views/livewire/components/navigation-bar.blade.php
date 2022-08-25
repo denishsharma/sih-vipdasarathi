@@ -13,7 +13,7 @@
                             aria-current="page">Home</a>
                         <a href="{{ route('case.all') }}"
                             class="{{ $activeButton == 'case' ? 'active-navbar-button' : 'is-navbar-button' }}">Cases</a>
-                        <a href="{{ route('relief.shelter') }}"
+                        <a href="{{ route('relief.demand-of-resource') }}"
                             class="{{ $activeButton == 'relief' ? 'active-navbar-button' : 'is-navbar-button' }}">Relief
                             Centres</a>
                         <a href="{{ route('team.all') }}"
