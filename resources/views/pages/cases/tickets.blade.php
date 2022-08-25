@@ -1,4 +1,4 @@
-@extends('layouts.general', ['activeButton' => 'case'])
+@extends('layouts.cases', ['cases' => 'tickets'])
 
 @section('breadcrumb-title')
     <nav class="flex" aria-label="Breadcrumb">
