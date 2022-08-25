@@ -29,14 +29,13 @@
 @endsection
 
 @section('navbar-attached-actions')
-    organizations actions
+    Demand of resources actions
 @endsection
 
 @section('setting-content')
-    <h4 class="text-2xl font-semibold text-gray-700">Manage Demand Of Resources</h4>
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <caption class="px-5 py-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-            Volunteer Profiles
+            Manage demand of resources
             <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Some description</p>
         </caption>
         <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
@@ -62,8 +61,8 @@
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
-                        <h4 class="text-sm font-medium text-gray-700">Gurujat</h4>
-                        <span class="text-xs font-regular text-gray-500">weqweqeqweqe</span>
+                        <h4 class="text-sm font-medium text-gray-700">Gujrat</h4>
+                        <span class="text-xs font-regular text-gray-500">add xxx resources</span>
                     </div>
                 </td>
                 <td class="py-4 px-6">

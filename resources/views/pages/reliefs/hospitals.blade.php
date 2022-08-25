@@ -28,7 +28,7 @@
 @endsection
 
 @section('navbar-attached-actions')
-    organizations actions
+    Hospital actions
 @endsection
 
 @section('setting-content')

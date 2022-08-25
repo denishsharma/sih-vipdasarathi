@@ -28,7 +28,7 @@
 @endsection
 
 @section('navbar-attached-actions')
-    organizations actions
+    Shelter actions
 @endsection
 
 @section('setting-content')
