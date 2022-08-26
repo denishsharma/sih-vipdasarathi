@@ -133,12 +133,6 @@
         </div>
     </div>
 
-    <livewire:test-edit-organization-modal />
-    <livewire:edit-user-details-modal />
-    <livewire:edit-task-details-modal />
-    <livewire:create-demand-of-resources-modal />
-    <livewire:create-case-modal />
-    <livewire:create-ticket-modal />
-    <livewire:modals.create-team-modal />
+
 
 @endsection

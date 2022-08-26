@@ -17,6 +17,7 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
     'node' => env('NODE_URL', 'http://localhost:3000'),
+    'server_token' => env('SERVER_TOKEN', ''),
 
     /*
     |--------------------------------------------------------------------------

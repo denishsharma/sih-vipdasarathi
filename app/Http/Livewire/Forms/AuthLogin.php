@@ -28,7 +28,7 @@ class AuthLogin extends Component
         ], $this->rememberMe);
 
         if ($authAttempt) {
-            \Cookie::queue('user_token', $this->email, '3600');
+            \Cookie::queue('user_token',auth()->user()->user_token, '3600');
             $this->redirect(route('home'));
         } else {
             $this->dialog()->error('Login failed', 'Invalid credentials');

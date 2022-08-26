@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Modals;
 
+use Illuminate\Support\Facades\Http;
 use App\Models\User;
 use Livewire\Component;
 use LivewireUI\Modal\ModalComponent;
@@ -27,7 +28,8 @@ class EditUserDetailsModal extends ModalComponent
         'organization' => 'required',
     ];
 
-    public function saveUser() {
+    public function saveUser()
+    {
         $this->validate([
             'firstName' => 'required',
             'email' => 'required|email',
@@ -53,7 +55,8 @@ class EditUserDetailsModal extends ModalComponent
         $this->emit('closeModal');
     }
 
-    public function addUser() {
+    public function addUser()
+    {
         $this->validate();
 
         $attributes = [
@@ -69,11 +72,25 @@ class EditUserDetailsModal extends ModalComponent
         if ($this->password) {
             $attributes['password'] = \Hash::make($this->password);
         }
+        //Function to create User
+        $apiURL = config('app.node') . '/user/create';
+        $postInput = [
+            'userKey' => $signature,
+        ];
+        $token = config('app.server_token');
+        $response = Http::withToken($token)->post($apiURL, $postInput);
+        $statusCode = $response->status();
+        $responseBody = json_decode($response->getBody(), true);
+
+        if ($responseBody['data']) {
+            $attributes['user_token'] = $responseBody['data']['userToken'];
+        }
+
 
         $user = User::create($attributes);
 
-        $this->emit('userTableRefresh');
 
+        $this->emit('userTableRefresh');
         $this->firstName = '';
         $this->lastName = '';
         $this->email = '';
@@ -84,7 +101,8 @@ class EditUserDetailsModal extends ModalComponent
         $this->closeModal();
     }
 
-    public function mount(string $actionType, User $user) {
+    public function mount(string $actionType, User $user)
+    {
         $this->actionType = $actionType ?? 'add';
         $this->user = $user;
 
