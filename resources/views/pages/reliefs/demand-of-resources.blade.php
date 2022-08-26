@@ -41,7 +41,7 @@
         <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
             <tr>
                 <th scope="col" class="py-3 px-6">
-                    Resource Type
+                    Request Type
                 </th>
                 <th scope="col" class="py-3 px-6">
                     Request Subject
@@ -50,7 +50,7 @@
                     Comment
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Item
+                    Item Name
                 </th>
                 <th scope="col" class="py-3 px-6">
                     Status
@@ -58,77 +58,38 @@
                 <th scope="col" class="py-3 px-6">
                     DateTime
                 </th>
-
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
-                        <h4 class="text-sm font-medium text-gray-700">Gurujat</h4>
-                        <span class="text-xs font-regular text-gray-500">weqweqeqweqe</span>
+                        <span class="text-xs font-regular text-gray-500">Food</span>
                     </div>
-                </td> --}}
-                <td class="py-4 px-6">
-                    Food
-                </td>
-                <td class="py-4 px-6">
-                    Sliver
-                </td>
-                <td class="flex flex-col gap-y-1 py-4 px-6">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">Default</span>
-                    <a href="" class="text-xs font-semibold">Check Sop</a>
-                </td>
-                <td class="py-4 px-6">
-                    $2999
-                </td>
-                <td class="py-4 px-6 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Microsoft Surface Pro
-                </th>
-                <td class="py-4 px-6">
-                    White
-                    Need more food
-                </td>
-                <td class="py-4 px-6">
-                    Lorem ipsum dolor sit amet
-                </td>
-                <td class="py-4 px-6">
-                    Apples
-                </td>
-                <td class="py-4 px-6">
-                    $1999
-                </td>
-                <td class="py-4 px-6 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                </td>
-            </tr>
-            <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    Magic Mouse 2
-                </th>
-                <td class="py-4 px-6">
-                    Black
-                </td>
-                <td class="py-4 px-6">
-                    Accessories
-                </td>
-                <td class="py-4 px-6">
-                    $99
                 </td>
                 <td class="py-4 px-6">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
-                        <span class="text-xs font-regular text-gray-500">23 October</span>
-                        <span class="text-xs font-regular text-gray-500">23:50</span>
+                        <span class="text-xs font-regular text-gray-500">xyz</span>
                     </div>
                 </td>
-
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">xyzcccc</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span
+                            class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-red-800">Low</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <h4 class="text-sm font-medium text-gray-700">28 July 2022</h4>
+                        <span class="text-xs font-regular text-gray-500">02:04</span>
+                    </div>
+                </td>
             </tr>
-            </tbody>
-        </table>
-    </div>
+        </tbody>
+    </table>
 @endsection

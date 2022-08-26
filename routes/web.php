@@ -73,9 +73,6 @@ Route::group(['prefix' => 'setting', 'middleware' => ['auth']], function () {
         })->name('setting.user.view.organization');
     });
 
-
-
-
     Route::group(['prefix' => 'sop'], function () {
 
         Route::get('/', function () {
@@ -186,9 +183,21 @@ Route::group(['prefix' => 'ticket', 'middleware' => ['auth']], function () {
 
 
 Route::group(['prefix' => 'relief', 'middleware' => ['auth']], function () {
-    Route::get('/shelter', function () {
-        return view('pages.reliefs.shelters');
-    })->name('relief.shelter');
+
+    Route::group(['prefix' => 'shelter'], function () {
+
+        Route::get('/', function () {
+            return view('pages.reliefs.shelters');
+        })->name('relief.shelter');
+
+        Route::get('/{signature}/overview', function () {
+            return view('pages.reliefs.shelters');
+        })->name('relief.shelter');
+
+        Route::get('/{signature}/overview', function ($signature) {
+            return view('pages.reliefs.shelter.view.overview', ['caseTitle' => 'Test Reliefs']);
+        })->name('reliefs.shelter.view.overview');
+    });
 
     Route::get('/hospital', function () {
         return view('pages.reliefs.hospitals');
