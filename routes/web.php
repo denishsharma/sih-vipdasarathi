@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NodeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,136 +14,141 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/index', [NodeController::class, 'index']);
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('pages.auth.login');
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('/login', function () {
+        return view('pages.auth.login');
+    })->middleware('guest')->name('auth.login');
 });
 
 Route::get('/home', function () {
     return view('dashboard');
-})->name('home');
+})->name('home')->middleware('auth');
 
-Route::group(['prefix' => 'setting'], function () {
+Route::group(['prefix' => 'setting', 'middleware' => ['auth']], function () {
     Route::get('/general', function () {
         return view('pages.settings.general');
     })->name('setting.general');
 
-    Route::group(['prefix' =>'/organization'], function(){
+    Route::group(['prefix' => '/organization'], function () {
         Route::get('/', function () {
             return view('pages.settings.organizations');
         })->name('setting.organization');
 
-        Route::get('/{signature}/overview', function ($signature){
+        Route::get('/{signature}/overview', function ($signature) {
             return view('pages.settings.organizations.views.overview', ['caseTitle' => 'Test Setting']);
         })->name('setting.organization.view.overview');
 
-        Route::get('/{signature}/permission', function ($signature){
+        Route::get('/{signature}/permission', function ($signature) {
             return view('pages.settings.organizations.views.permissions', ['caseTitle' => 'Test Setting']);
         })->name('setting.organization.view.permission');
 
-        Route::get('/{signature}/users', function ($signature){
+        Route::get('/{signature}/users', function ($signature) {
             return view('pages.settings.organizations.views.users', ['caseTitle' => 'Test Setting']);
         })->name('setting.organization.view.users');
-
     });
 
 
-Route::group(['prefix' => '/user'], function(){
+    Route::group(['prefix' => '/user'], function () {
 
-    Route::get('/', function () {
-        return view('pages.settings.users');
-    })->name('setting.user');
+        Route::get('/', function () {
+            return view('pages.settings.users');
+        })->name('setting.user');
 
-    Route::get('/{signature}/overview', function ($signature){
-        return view('pages.settings.users.views.overview', ['caseTitle' => 'Test Setting']);
-    })->name('setting.user.view.overview');
+        Route::get('/{signature}/overview', function ($signature) {
+            return view('pages.settings.users.views.overview', ['caseTitle' => 'Test Setting']);
+        })->name('setting.user.view.overview');
 
-    Route::get('/{signature}/permission', function ($signature){
-        return view('pages.settings.users.views.permission', ['caseTitle' => 'Test Setting']);
-    })->name('setting.user.view.permission');
+        Route::get('/{signature}/permission', function ($signature) {
+            return view('pages.settings.users.views.permission', ['caseTitle' => 'Test Setting']);
+        })->name('setting.user.view.permission');
 
-    Route::get('/{signature}/organization', function ($signature){
-        return view('pages.settings.users.views.organization', ['caseTitle' => 'Test Setting']);
-    })->name('setting.user.view.organization');
-});
-
-
-
-
-Route::group(['prefix' => 'sop'], function(){
-
-    Route::get('/', function () {
-        return view('pages.settings.sops');
-    })->name('setting.sop');
-
-    Route::get('/{signature}/overview', function ($signature){
-        return view('pages.settings.sop.view.overview', ['caseTitle' => 'Test Setting']);
-    })->name('setting.sop.view.overview');
-
-    Route::get('/{signature}/DisasterType', function ($signature){
-        return view('pages.settings.sop.view.DisasterType', ['caseTitle' => 'Test Setting']);
-    })->name('setting.sop.view.DisasterType');
+        Route::get('/{signature}/organization', function ($signature) {
+            return view('pages.settings.users.views.organization', ['caseTitle' => 'Test Setting']);
+        })->name('setting.user.view.organization');
+    });
 
 
 
-});
+
+    Route::group(['prefix' => 'sop'], function () {
+
+        Route::get('/', function () {
+            return view('pages.settings.sops');
+        })->name('setting.sop');
+
+        Route::get('/{signature}/overview', function ($signature) {
+            return view('pages.settings.sop.view.overview', ['caseTitle' => 'Test Setting']);
+        })->name('setting.sop.view.overview');
+
+        Route::get('/{signature}/DisasterType', function ($signature) {
+            return view('pages.settings.sop.view.DisasterType', ['caseTitle' => 'Test Setting']);
+        })->name('setting.sop.view.DisasterType');
+    });
 
 
-    Route::get('/TaskTypes', function () {
+    Route::get('/task-types', function () {
         return view('pages.settings.task-types');
     })->name('setting.task-types');
 
-
-
+    Route::get('/disaster-types', function () {
+        return view('pages.settings.disaster-types');
+    })->name('setting.disaster-types');
 });
 
 
-Route::group(['prefix' => 'case'], function () {
-    Route::get('/all', function () {
-        return view('pages.cases.general', ['activeSection' => 'all', 'test' => 'all cases']);
-    })->name('case.all');
+Route::group(['prefix' => 'case', 'middleware' => ['auth']], function () {
+    Route::get('/all', [\App\Http\Controllers\CaseController::class, 'showAllCasesPage'])->name('case.all');
 
-    Route::get('/active', function () {
-        return view('pages.cases.general', ['activeSection' => 'active', 'test' => 'active cases']);
-    })->name('case.active');
+    Route::get('/active', [\App\Http\Controllers\CaseController::class, 'showActiveCasesPage'])->name('case.active');
 
-    Route::get('/pending', function () {
-        return view('pages.cases.general', ['activeSection' => 'pending', 'test' => 'pending cases']);
-    })->name('case.pending');
+    Route::get('/pending', [\App\Http\Controllers\CaseController::class, 'showPendingCasesPage'])->name('case.pending');
 
-    Route::get('/closed', function () {
-        return view('pages.cases.general', ['activeSection' => 'closed', 'test' => 'closed cases']);
-    })->name('case.closed');
+    Route::get('/closed', [\App\Http\Controllers\CaseController::class, 'showClosedCasesPage'])->name('case.closed');
 
-    Route::get('/{signature}/overview', function ($signature){
+    Route::get('/{signature}/overview', function ($signature) {
         return view('pages.cases.view.overview', ['caseTitle' => 'Test Case']);
     })->name('case.view.overview');
 
-    Route::get('/{signature}/teams', function ($signature){
+    Route::get('/{signature}/teams', function ($signature) {
         return view('pages.cases.view.teams', ['caseTitle' => 'Test Case']);
     })->name('case.view.teams');
 
-    Route::get('/{signature}/tasks', function ($signature){
+    Route::get('/{signature}/tasks', function ($signature) {
         return view('pages.cases.view.tasks', ['caseTitle' => 'Test Case']);
     })->name('case.view.tasks');
 
-    Route::get('/{signature}/decisions', function ($signature){
+    Route::get('/{signature}/demands', function ($signature) {
+        return view('pages.cases.view.demands', ['caseTitle' => 'Test Case']);
+    })->name('case.view.demand');
+
+    Route::get('/{signature}/decisions', function ($signature) {
         return view('pages.cases.view.decisions', ['caseTitle' => 'Test Case']);
     })->name('case.view.decisions');
 
-    Route::get('/{signature}/reports', function ($signature){
+    Route::get('/{signature}/reports', function ($signature) {
         return view('pages.cases.view.reports', ['caseTitle' => 'Test Case']);
     })->name('case.view.reports');
 
-    Route::get('/{signature}/shelters', function ($signature){
+    Route::get('/{signature}/volunteers', function ($signature) {
+        return view('pages.cases.view.volunteers', ['caseTitle' => 'Test Case']);
+    })->name('case.view.volunteer');
+
+    Route::get('/{signature}/shelters', function ($signature) {
         return view('pages.cases.view.shelters', ['caseTitle' => 'Test Case']);
     })->name('case.view.shelters');
+
+    Route::get('/{signature}/tickets', function ($signature) {
+        return view('pages.cases.view.tickets', ['caseTitle' => 'Test Case']);
+    })->name('case.view.ticket');
 });
 
-Route::group(['prefix' => 'team'], function () {
+Route::group(['prefix' => 'team', 'middleware' => ['auth']], function () {
     Route::get('/all', function () {
         return view('pages.teams.general', ['activeSection' => 'all', 'test' => 'all teams']);
     })->name('team.all');
@@ -158,10 +164,9 @@ Route::group(['prefix' => 'team'], function () {
     Route::get('/{signature}/overview', function ($signature) {
         return view('pages.teams.view.overview', ['caseTitle' => 'Test Teams']);
     })->name('team.view.overview');
-
 });
 
-Route::group(['prefix' => 'ticket'], function () {
+Route::group(['prefix' => 'ticket', 'middleware' => ['auth']], function () {
     Route::get('/all', function () {
         return view('pages.tickets.general', ['activeSection' => 'all', 'test' => 'all tickets']);
     })->name('ticket.all');
@@ -180,7 +185,7 @@ Route::group(['prefix' => 'ticket'], function () {
 });
 
 
-Route::group(['prefix' => 'relief'], function () {
+Route::group(['prefix' => 'relief', 'middleware' => ['auth']], function () {
     Route::get('/shelter', function () {
         return view('pages.reliefs.shelters');
     })->name('relief.shelter');
@@ -202,20 +207,12 @@ Route::group(['prefix' => 'relief'], function () {
     })->name('relief.foods');
 });
 
-Route::group(['prefix' => 'volunteer'], function () {
-    Route::get('/profiles', function () {
-        return view('pages.volunteer.profiles');
-    })->name('volunteer.profiles');
+Route::group(['prefix' => 'volunteer', 'middleware' => ['auth']], function () {
+    Route::get('/profiles', [\App\Http\Controllers\VolunteerController::class, 'showAllProfilesPage'])->name('volunteer.profiles');
 
-    Route::get('/tokens', function () {
-        return view('pages.volunteer.tokens');
-    })->name('volunteer.tokens');
+    Route::get('/tokens', [\App\Http\Controllers\VolunteerController::class, 'showVolunteerTokensPage'])->name('volunteer.tokens');
 
-    Route::get('/audits', function () {
-        return view('pages.volunteer.audits');
-    })->name('volunteer.audits');
+    Route::get('/audits', [\App\Http\Controllers\VolunteerController::class, 'showVolunteerAuditPage'])->name('volunteer.audits');
 
-    Route::get('/{signature}/overview', function ($signature) {
-        return view('pages.volunteer.view.overview', ['caseTitle' => 'Test Volunteers']);
-    })->name('volunteer.view.overview');
+    Route::get('/{signature}/overview', [\App\Http\Controllers\VolunteerController::class, 'showVolunteerOverviewPage'])->name('volunteer.view.overview');
 });

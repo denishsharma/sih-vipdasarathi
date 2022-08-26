@@ -18,6 +18,7 @@
     @livewireScripts
     <wireui:scripts />
     @vite('resources/js/app.js')
+    @livewire('livewire-ui-modal')
 </body>
 
 </html>
