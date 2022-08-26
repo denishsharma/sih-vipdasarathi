@@ -41,6 +41,7 @@
 
 @section('setting-content')
     <div class="overflow-x-auto border border-gray-200 rounded-lg">
+        <div class="overflow-x-auto border border-gray-200 rounded-lg soft-scrollbar mt-6">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <caption class="px-5 py-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                 Shelters

@@ -33,37 +33,32 @@
 @endsection
 
 @section('setting-content')
-    <div class="overflow-x-auto border border-gray-200 rounded-lg">
-        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <caption
-                class="px-5 py-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
-                Active Cases
-                <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list of
-                                                                                     Flowbite products
-                                                                                     designed to help you
-                                                                                     work and play, stay
-                                                                                     organized, get answers,
-                                                                                     keep in touch, grow
-                                                                                     your business, and
-                                                                                     more.</p>
-            </caption>
-            <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <caption class="px-5 py-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+            Manage demand of resources
+            <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Some description</p>
+        </caption>
+        <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
             <tr>
                 <th scope="col" class="py-3 px-6">
-                    Case Name
+                    Resource Type
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Pincode
+                    Request Subject
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Type of Disaster
+                    Comment
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    Date and Time
+                    Item
                 </th>
                 <th scope="col" class="py-3 px-6">
-                    <span class="sr-only">Edit</span>
+                    Status
                 </th>
+                <th scope="col" class="py-3 px-6">
+                    DateTime
+                </th>
+
             </tr>
             </thead>
             <tbody>
@@ -73,6 +68,9 @@
                         <h4 class="text-sm font-medium text-gray-700">Gurujat</h4>
                         <span class="text-xs font-regular text-gray-500">weqweqeqweqe</span>
                     </div>
+                </td> --}}
+                <td class="py-4 px-6">
+                    Food
                 </td>
                 <td class="py-4 px-6">
                     Sliver
@@ -94,9 +92,13 @@
                 </th>
                 <td class="py-4 px-6">
                     White
+                    Need more food
                 </td>
                 <td class="py-4 px-6">
-                    Laptop PC
+                    Lorem ipsum dolor sit amet
+                </td>
+                <td class="py-4 px-6">
+                    Apples
                 </td>
                 <td class="py-4 px-6">
                     $1999
@@ -118,9 +120,13 @@
                 <td class="py-4 px-6">
                     $99
                 </td>
-                <td class="py-4 px-6 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">23 October</span>
+                        <span class="text-xs font-regular text-gray-500">23:50</span>
+                    </div>
                 </td>
+
             </tr>
             </tbody>
         </table>

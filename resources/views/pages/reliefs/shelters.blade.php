@@ -33,6 +33,7 @@
 
 @section('setting-content')
     <div class="overflow-x-auto border border-gray-200 rounded-lg">
+        <div class="overflow-x-auto border border-gray-200 rounded-lg soft-scrollbar mt-6">
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <caption class="px-5 py-3 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
                 Shelters
@@ -58,7 +59,7 @@
             </tr>
             </thead>
             <tbody class="divide-y">
-            <tr class="bg-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <tr class="bg-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                 <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
                         <h4 class="text-sm font-medium text-gray-700">Mumbai Shelter Camp</h4>
@@ -169,11 +170,11 @@
                     </div>
                 </td>
 
-                <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                </td>
-            </tr>
+                    <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
