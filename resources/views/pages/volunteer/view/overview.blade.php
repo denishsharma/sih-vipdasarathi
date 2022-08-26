@@ -13,15 +13,15 @@
             <li>
                 <div class="flex items-center">
                     <x-icon name="chevron-right" class="w-3 h-3 text-gray-400" />
-                    <a href="#"
+                    <a href="{{ route('volunteer.profiles') }}"
                        class="ml-1 text-sm font-medium text-gray-400 hover:text-gray-700 md:ml-2 dark:text-gray-400 dark:hover:text-white">Volunteers</a>
                 </div>
             </li>
             <li>
                 <div class="flex items-center">
                     <x-icon name="chevron-right" class="w-3 h-3 text-gray-400" />
-                    <a href="{{ route('volunteer.view.overview', ['signature' => '777']) }}"
-                       class="ml-1 text-sm font-medium text-gray-400 hover:text-gray-700 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{ $caseTitle }}</a>
+                    <a href="{{ route('volunteer.view.overview', ['signature' => $profile->signature]) }}"
+                       class="ml-1 text-sm font-medium text-gray-400 hover:text-gray-700 md:ml-2 dark:text-gray-400 dark:hover:text-white">{{ $profile->user->first_name }} {{ $profile->user->last_name }}</a>
                 </div>
             </li>
             <li aria-current="page">
@@ -35,5 +35,5 @@
 @endsection
 
 @section('main-content')
-    <h4>overview of case</h4>
+    <h4>overview of volunteer</h4>
 @endsection
