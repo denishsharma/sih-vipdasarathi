@@ -242,15 +242,6 @@
                                 <span
                                     class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-800">Inactive</span>
                             </td>
-
-                            <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Members</a>
-                                <a href="#"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                            </td>
                         </tr>
 
 
