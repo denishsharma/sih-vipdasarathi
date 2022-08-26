@@ -1,23 +1,5 @@
 @extends('layouts.general', ['activeButton' => 'volunteer'])
 
-@section('navbar-attached')
-    <nav class="">
-        <div class="mx-auto px-2 sm:px-6 lg:px-20">
-            <div class="relative flex items-center justify-between h-16 gap-10">
-                <div class="">
-                    @yield('breadcrumb')
-                </div>
-                <div class="">
-                    <div class="container">
-                        <x-button label="Add New Volunteer" @click="$openModal('editOrganization')"></x-button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <div class="bg-gray-100 h-px"></div>
-@endsection
-
 @section('content')
     <div class="mx-auto px-20 py-10">
         <div class="mx-auto grid overflow-hidden grid-cols-4 grid-rows-1 gap-10 lg:w-10/12 sm:w-auto">

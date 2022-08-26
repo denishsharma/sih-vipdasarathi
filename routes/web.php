@@ -198,19 +198,11 @@ Route::group(['prefix' => 'relief', 'middleware' => ['auth']], function () {
 });
 
 Route::group(['prefix' => 'volunteer', 'middleware' => ['auth']], function () {
-    Route::get('/profiles', function () {
-        return view('pages.volunteer.profiles');
-    })->name('volunteer.profiles');
+    Route::get('/profiles', [\App\Http\Controllers\VolunteerController::class, 'showAllProfilesPage'])->name('volunteer.profiles');
 
-    Route::get('/tokens', function () {
-        return view('pages.volunteer.tokens');
-    })->name('volunteer.tokens');
+    Route::get('/tokens', [\App\Http\Controllers\VolunteerController::class, 'showVolunteerTokensPage'])->name('volunteer.tokens');
 
-    Route::get('/audits', function () {
-        return view('pages.volunteer.audits');
-    })->name('volunteer.audits');
+    Route::get('/audits', [\App\Http\Controllers\VolunteerController::class, 'showVolunteerAuditPage'])->name('volunteer.audits');
 
-    Route::get('/{signature}/overview', function ($signature) {
-        return view('pages.volunteer.view.overview', ['caseTitle' => 'Test Volunteers']);
-    })->name('volunteer.view.overview');
+    Route::get('/{signature}/overview', [\App\Http\Controllers\VolunteerController::class, 'showVolunteerOverviewPage'])->name('volunteer.view.overview');
 });
