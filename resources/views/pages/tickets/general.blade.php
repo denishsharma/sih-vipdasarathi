@@ -90,16 +90,7 @@
                             @elseif ($activeSection == 'closed')
                                 Closed Tickets
                             @endif
-                            <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse a list
-                                of
-                                Flowbite products
-                                designed to help you
-                                work and play, stay
-                                organized, get answers,
-                                keep in touch, grow
-                                your business, and
-                                more.
-                            </p>
+
                         </caption>
                         <thead class="text-xs font-normal text-gray-500 uppercase bg-stone-100">
                             <tr>

@@ -32,4 +32,9 @@ class DisasterCase extends Model {
     public function disaster_type() {
         return $this->belongsTo(DisasterType::class);
     }
+
+    public function tasks() {
+        return $this->hasMany(Task::class);
+
+    }
 }

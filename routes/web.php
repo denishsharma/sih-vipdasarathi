@@ -73,6 +73,7 @@ Route::group(['prefix' => 'setting', 'middleware' => ['auth']], function () {
         })->name('setting.user.view.organization');
     });
 
+
     Route::group(['prefix' => 'sop'], function () {
 
         Route::get('/', function () {
@@ -108,13 +109,9 @@ Route::group(['prefix' => 'case', 'middleware' => ['auth']], function () {
 
     Route::get('/closed', [\App\Http\Controllers\CaseController::class, 'showClosedCasesPage'])->name('case.closed');
 
-    Route::get('/{signature}/overview', function ($signature) {
-        return view('pages.cases.view.overview', ['caseTitle' => 'Test Case']);
-    })->name('case.view.overview');
+    Route::get('/{signature}/overview', [\App\Http\Controllers\CaseController::class, 'showCaseOverviewPage'])->name('case.view.overview');
 
-    Route::get('/{signature}/teams', function ($signature) {
-        return view('pages.cases.view.teams', ['caseTitle' => 'Test Case']);
-    })->name('case.view.teams');
+    Route::get('/{signature}/teams', [\App\Http\Controllers\CaseController::class, 'showCaseTeamsPage'])->name('case.view.teams');
 
     Route::get('/{signature}/tasks', function ($signature) {
         return view('pages.cases.view.tasks', ['caseTitle' => 'Test Case']);

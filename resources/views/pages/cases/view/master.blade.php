@@ -6,47 +6,47 @@
             <div class="row-end-auto col-start-1 grid grid-cols-1 gap-5">
                 <div class="h-fit w-10/12 mx-auto">
                     <div class="grid grid-cols-1 gap-1">
-                        <a href="{{ route('case.view.overview', ['signature' => '123']) }}"
+                        <a href="{{ route('case.view.overview', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'overview' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="identification" class="w-4.5 h-4.5" />
                             <span>Overview</span>
                         </a>
-                        <a href="{{ route('case.view.teams', ['signature' => '123']) }}"
+                        <a href="{{ route('case.view.teams', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'teams' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="database" class="w-4.5 h-4.5" />
                             <span>Teams</span>
                         </a>
-                        <a href="{{ route('case.view.tasks', ['signature' => 'ccc']) }}"
+                        <a href="{{ route('case.view.tasks', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'tasks' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="document-text" class="w-4.5 h-4.5" />
                             <span>Tasks</span>
                         </a>
-                        <a href="{{ route('case.view.demand', ['signature' => 'ccc']) }}"
+                        <a href="{{ route('case.view.demand', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'demands' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="document-text" class="w-4.5 h-4.5" />
                             <span>Demands</span>
                         </a>
-                        <a href="{{ route('case.view.decisions', ['signature' => 'this']) }}"
+                        <a href="{{ route('case.view.decisions', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'decisions' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="document-text" class="w-4.5 h-4.5" />
                             <span>Decisions</span>
                         </a>
-                        <a href="{{ route('case.view.ticket', ['signature' => 'this']) }}"
+                        <a href="{{ route('case.view.ticket', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'tickets' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="document-text" class="w-4.5 h-4.5" />
                             <span>Tickets</span>
                         </a>
-                        <a href="{{ route('case.view.reports', ['signature' => 'sss']) }}"
+                        <a href="{{ route('case.view.reports', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'reports' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="document-text" class="w-4.5 h-4.5" />
                             <span>Reports</span>
                         </a>
-                        <a href="{{ route('case.view.volunteer', ['signature' => 'sss']) }}"
+                        <a href="{{ route('case.view.volunteer', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'volunteers' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="document-text" class="w-4.5 h-4.5" />
                             <span>Volunteers</span>
                         </a>
-                        <a href="{{ route('case.view.shelters', ['signature' => 'iii']) }}"
+                        <a href="{{ route('case.view.shelters', ['signature' => $case->signature]) }}"
                             class="{{ $activeSection == 'shelters' ? 'active-setting-button' : 'is-setting-button' }}">
                             <x-icon name="document-text" class="w-4.5 h-4.5" />
                             <span>Shelter</span>

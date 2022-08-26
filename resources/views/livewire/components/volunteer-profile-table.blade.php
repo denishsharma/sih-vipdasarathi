@@ -29,27 +29,28 @@
     <tbody class="divide-y">
     @foreach($volunteerProfiles as $volunteerProfile)
         <tr class="bg-white dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-            <td class="py-4 px-6">
-                {{ $volunteerProfile->user->first_name }} {{ $volunteerProfile->user->last_name }}
-            </td>
-            <td class="py-4 px-6">
-                {{ $volunteerProfile->user->mobile }}
-            </td>
-            <td class="py-4 px-6">
-                {{ $volunteerProfile->user->email }}
-            </td>
-            <td class="py-4 px-6">
-                {{ $volunteerProfile->aadhar_card }}
-            </td>
-            <td class="py-4 px-6">
-                {{ Carbon\Carbon::parse($volunteerProfile->created_at)->format('d M Y') }}
-            </td>
+{{--            <td class="py-4 px-6">--}}
+{{--                {{ $volunteerProfile->user->first_name }} {{ $volunteerProfile->user->last_name }}--}}
+{{--            </td>--}}
+{{--            <td class="py-4 px-6">--}}
+{{--                {{ $volunteerProfile->user->mobile }}--}}
+{{--            </td>--}}
+{{--            <td class="py-4 px-6">--}}
+{{--                {{ $volunteerProfile->user->email }}--}}
+{{--            </td>--}}
+{{--            <td class="py-4 px-6">--}}
+{{--                {{ $volunteerProfile->aadhar_card }}--}}
+{{--            </td>--}}
+{{--            <td class="py-4 px-6">--}}
+{{--                {{ Carbon\Carbon::parse($volunteerProfile->created_at)->format('d M Y') }}--}}
+{{--            </td>--}}
 
-            <td class="py-4 px-6 text-right flex items-center justify-end gap-3">
-                <a wire:click="openEditModal({{ $volunteerProfile }})" class="cursor-point font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                <a href="{{ route('volunteer.view.overview', ['signature' => $volunteerProfile->signature]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
-            </td>
+{{--            <td class="py-4 px-6 text-right flex items-center justify-end gap-3">--}}
+{{--                <a wire:click="openEditModal({{ $volunteerProfile }})" class="cursor-point font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>--}}
+{{--                <a href="{{ route('volunteer.view.overview', ['signature' => $volunteerProfile->signature]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>--}}
+{{--                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>--}}
+{{--            </td>--}}
+
         </tr>
     @endforeach
     </tbody>

@@ -84,7 +84,7 @@
             <td class="py-4 px-6">
                 <div class="text-right flex items-center justify-end gap-3">
                     <a wire:click="openEditModal({{ $case }})" class="cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    <a href="{{ route('case.view.overview', ['signature' => $case->signature]) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                 </div>
             </td>
         </tr>

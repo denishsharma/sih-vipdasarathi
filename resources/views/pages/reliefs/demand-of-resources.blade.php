@@ -69,18 +69,23 @@
                 </td>
                 <td class="py-4 px-6">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
-                        <span class="text-xs font-regular text-gray-500">xyz</span>
+                        <span class="text-xs font-regular text-gray-500">Need of rice minimum 60 kg.</span>
                     </div>
                 </td>
                 <td class="py-4 px-6">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
-                        <span class="text-xs font-regular text-gray-500">xyzcccc</span>
+                        <span class="text-xs font-regular text-gray-500">Needed to be distributed by 8 pm.</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">Rice</span>
                     </div>
                 </td>
                 <td class="py-4 px-6">
                     <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
                         <span
-                            class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-red-800">Low</span>
+                            class=" text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:text-red-800">Pending</span>
                     </div>
                 </td>
                 <td class="py-4 px-6">
@@ -89,7 +94,46 @@
                         <span class="text-xs font-regular text-gray-500">02:04</span>
                     </div>
                 </td>
+
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                <td scope="row" class="py-2 px-6 text-gray-900 whitespace-nowrap dark:text-white">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">Water</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">Need of water minimum 20 kg.</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">Needed to be distributed by 5 pm.</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span class="text-xs font-regular text-gray-500">Water</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <span
+                            class=" text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:text-red-800">Pending</span>
+                    </div>
+                </td>
+                <td class="py-4 px-6">
+                    <div class="grid grid-rows-2 grid-cols-1 gap-0.4">
+                        <h4 class="text-sm font-medium text-gray-700">27 July 2022</h4>
+                        <span class="text-xs font-regular text-gray-500">02:04</span>
+                    </div>
+                </td>
             </tr>
+
+
+
+
+
         </tbody>
     </table>
 @endsection

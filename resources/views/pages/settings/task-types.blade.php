@@ -66,10 +66,10 @@
                 </td>
                 <td class="py-4 px-6">
                     13
-                    <a href="{{ route('setting.task-types.view.no-of-task', ['signature' => '123']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">(View)</a>
+                    <a href="" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">(View)</a>
                 </td>
                 <td class="py-4 px-6 text-right flex items-center justify-start gap-3">
-                    <a href="{{ route('setting.task-types.view.overview', ['signature' => '123']) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                    <a href="" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</a>
                 </td>

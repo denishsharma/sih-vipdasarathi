@@ -24,4 +24,14 @@ class CaseController extends Controller {
         $cases = DisasterCase::where('status', '=', 'pending')->orderByDesc('created_at')->get();
         return view('pages.cases.general', ['activeSection' => 'pending', 'cases' => $cases]);
     }
+
+    public function showCaseOverviewPage($signature) {
+        $case = DisasterCase::whereSignature($signature)->first();
+        return view('pages.cases.view.overview', ['case' => $case]);
+    }
+
+    public function showCaseTeamsPage($signature) {
+        $case = DisasterCase::whereSignature($signature)->first();
+        return view('pages.cases.view.teams', ['case' => $case]);
+    }
 }
